@@ -1,0 +1,267 @@
+{
+  "format": "glTF 2.0 binary",
+  "textures": "External PNGs in ../textures; keep the folders together.",
+  "models": [
+    {
+      "name": "hero",
+      "file": "hero.glb",
+      "bytes": 391564,
+      "meshes": 33,
+      "triangles": 3722,
+      "animations": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "jump",
+        "hurt",
+        "death"
+      ],
+      "textures": [
+        "hero-jacket",
+        "skin",
+        "hero-trousers",
+        "leather",
+        "stone",
+        "hero-face",
+        "hero-backpack"
+      ]
+    },
+    {
+      "name": "wanderer",
+      "file": "wanderer.glb",
+      "bytes": 269740,
+      "meshes": 28,
+      "triangles": 2642,
+      "animations": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "jump",
+        "hurt",
+        "death"
+      ],
+      "textures": [
+        "enemy-robes",
+        "leather",
+        "stone",
+        "enemy-mask"
+      ]
+    },
+    {
+      "name": "pine",
+      "file": "pine.glb",
+      "bytes": 99280,
+      "meshes": 2,
+      "triangles": 1004,
+      "animations": [],
+      "textures": [
+        "wood",
+        "leaves"
+      ]
+    },
+    {
+      "name": "rock",
+      "file": "rock.glb",
+      "bytes": 11316,
+      "meshes": 1,
+      "triangles": 100,
+      "animations": [],
+      "textures": [
+        "stone"
+      ]
+    },
+    {
+      "name": "shelter",
+      "file": "shelter.glb",
+      "bytes": 410420,
+      "meshes": 5,
+      "triangles": 4212,
+      "animations": [],
+      "textures": [
+        "wood",
+        "cloth"
+      ]
+    },
+    {
+      "name": "cave",
+      "file": "cave.glb",
+      "bytes": 215184,
+      "meshes": 6,
+      "triangles": 2168,
+      "animations": [],
+      "textures": [
+        "stone"
+      ]
+    },
+    {
+      "name": "ruins",
+      "file": "ruins.glb",
+      "bytes": 196064,
+      "meshes": 5,
+      "triangles": 1980,
+      "animations": [],
+      "textures": [
+        "stone"
+      ]
+    },
+    {
+      "name": "wall",
+      "file": "wall.glb",
+      "bytes": 131372,
+      "meshes": 5,
+      "triangles": 1308,
+      "animations": [],
+      "textures": [
+        "wood",
+        "stone"
+      ]
+    },
+    {
+      "name": "crystal",
+      "file": "crystal.glb",
+      "bytes": 22556,
+      "meshes": 1,
+      "triangles": 216,
+      "animations": [],
+      "textures": [
+        "crystal"
+      ]
+    },
+    {
+      "name": "campfire",
+      "file": "campfire.glb",
+      "bytes": 74936,
+      "meshes": 7,
+      "triangles": 702,
+      "animations": [],
+      "textures": [
+        "stone",
+        "wood",
+        "flame"
+      ]
+    },
+    {
+      "name": "axe",
+      "file": "axe.glb",
+      "bytes": 38208,
+      "meshes": 3,
+      "triangles": 356,
+      "animations": [],
+      "textures": [
+        "wood",
+        "stone",
+        "leather"
+      ]
+    },
+    {
+      "name": "torch",
+      "file": "torch.glb",
+      "bytes": 18400,
+      "meshes": 6,
+      "triangles": 270,
+      "animations": [],
+      "textures": [
+        "wood",
+        "cloth",
+        "leather",
+        "flame"
+      ]
+    },
+    {
+      "name": "backpack",
+      "file": "backpack.glb",
+      "bytes": 107968,
+      "meshes": 6,
+      "triangles": 1052,
+      "animations": [],
+      "textures": [
+        "hero-backpack",
+        "leather",
+        "stone"
+      ]
+    },
+    {
+      "name": "wood",
+      "file": "wood.glb",
+      "bytes": 32708,
+      "meshes": 2,
+      "triangles": 312,
+      "animations": [],
+      "textures": [
+        "wood",
+        "leather"
+      ]
+    },
+    {
+      "name": "stone",
+      "file": "stone.glb",
+      "bytes": 9360,
+      "meshes": 1,
+      "triangles": 80,
+      "animations": [],
+      "textures": [
+        "stone"
+      ]
+    },
+    {
+      "name": "ore",
+      "file": "ore.glb",
+      "bytes": 15100,
+      "meshes": 2,
+      "triangles": 128,
+      "animations": [],
+      "textures": [
+        "stone"
+      ]
+    },
+    {
+      "name": "berries",
+      "file": "berries.glb",
+      "bytes": 74936,
+      "meshes": 3,
+      "triangles": 740,
+      "animations": [],
+      "textures": [
+        "wood",
+        "skin",
+        "leaves"
+      ]
+    },
+    {
+      "name": "meat",
+      "file": "meat.glb",
+      "bytes": 10860,
+      "meshes": 2,
+      "triangles": 84,
+      "animations": [],
+      "textures": [
+        "skin",
+        "stone"
+      ]
+    },
+    {
+      "name": "island",
+      "file": "island.glb",
+      "bytes": 1361064,
+      "meshes": 1,
+      "triangles": 48050,
+      "animations": [],
+      "textures": [
+        "ground"
+      ]
+    },
+    {
+      "name": "ocean",
+      "file": "ocean.glb",
+      "bytes": 448296,
+      "meshes": 1,
+      "triangles": 20000,
+      "animations": [],
+      "textures": [
+        "water"
+      ]
+    }
+  ]
+}

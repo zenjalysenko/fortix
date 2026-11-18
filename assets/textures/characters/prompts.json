@@ -1,0 +1,29 @@
+{
+  "generator": "built-in image_gen",
+  "assets": [
+    {
+      "file": "hero-face.png",
+      "prompt": "Use case: stylized-concept. Asset type: game character texture PNG for a hand-painted low-poly Three.js island survival game. Subject: A flat square face decal for the FRONT face of a simple box-shaped stylized adult island explorer head. Warm tan skin fills the entire square including corners, friendly determined dark brown eyes symmetric at 43 percent of height, thick brows, small nose, subtle relaxed closed mouth at 72 percent height. Short dark brown hair occupies only top 18 percent, light subtle beard stubble at bottom. Face details centered within central 70 percent; no ears or head outline, no neck, no shoulders, no border, no transparency. Unwrapped flat front face, not a portrait or a head render. Square 1024 by 1024, crisp readable stylized details, neutral even diffuse illumination, no directional lighting or baked shadows, no perspective, no vignette, no text, no labels, no watermark. Match a muted earthy stylized survival game palette."
+    },
+    {
+      "file": "hero-jacket.png",
+      "prompt": "Use case: stylized-concept. Asset type: game character texture PNG for a hand-painted low-poly Three.js island survival game. Subject: Seamless rust-orange weathered waxed canvas jacket fabric, tiny woven fibers, subtle short reinforced seam segments, sparse scratches and a few restrained worn patches. Uniformly distributed details, no full jacket silhouette, no giant zipper or pockets. Edge-to-edge clothing material, warm terracotta orange. Square 1024 by 1024, crisp readable stylized details, neutral even diffuse illumination, no directional lighting or baked shadows, no perspective, no vignette, no text, no labels, no watermark. Match a muted earthy stylized survival game palette."
+    },
+    {
+      "file": "hero-trousers.png",
+      "prompt": "Use case: stylized-concept. Asset type: game character texture PNG for a hand-painted low-poly Three.js island survival game. Subject: Seamless desaturated charcoal olive rugged trouser fabric, small reinforced woven ripstop grid and restrained fabric scuffs. Small-scale pattern with uniform density, no trousers silhouette, no belts or buttons. Edge-to-edge clothing material. Square 1024 by 1024, crisp readable stylized details, neutral even diffuse illumination, no directional lighting or baked shadows, no perspective, no vignette, no text, no labels, no watermark. Match a muted earthy stylized survival game palette."
+    },
+    {
+      "file": "hero-backpack.png",
+      "prompt": "Use case: stylized-concept. Asset type: game character texture PNG for a hand-painted low-poly Three.js island survival game. Subject: Seamless muted sage olive backpack canvas and leather surface, fine woven canvas with sparse tiny dark brown worn leather reinforcement patches and subtle short beige stitches. Uniform material texture, no full backpack silhouette, no buckles or objects. Edge-to-edge. Square 1024 by 1024, crisp readable stylized details, neutral even diffuse illumination, no directional lighting or baked shadows, no perspective, no vignette, no text, no labels, no watermark. Match a muted earthy stylized survival game palette."
+    },
+    {
+      "file": "enemy-mask.png",
+      "prompt": "Use case: stylized-concept. Asset type: game character texture PNG for a hand-painted low-poly Three.js island survival game. Subject: A flat square front-face texture decal for the FRONT face of a stylized shadow wanderer box-shaped head. Entire square filled with charcoal blue-grey weathered hood fabric surrounding a simple dark slate angular face mask in central 70 percent. Two narrow glowing amber orange eyes centered symmetrically at 43 percent of height, angular subtle vertical worn markings, closed solid lower mask. No mouth, no gore, no neck, no shoulders, no head silhouette, no transparency, no black empty margins. Unwrapped flat front face, not a portrait or 3D render. Square 1024 by 1024, crisp readable stylized details, neutral even diffuse illumination, no directional lighting or baked shadows, no perspective, no vignette, no text, no labels, no watermark. Match a muted earthy stylized survival game palette."
+    },
+    {
+      "file": "enemy-robes.png",
+      "prompt": "Use case: stylized-concept. Asset type: game character texture PNG for a hand-painted low-poly Three.js island survival game. Subject: Seamless storm-blue charcoal worn woven robe fabric for shadow wanderer enemies. Fine rough weave, tiny scattered frayed short stitch marks, faint slate blue angular woven motifs, sparse subtle amber colored stitch flecks. Restrained contrast, uniformly distributed details, no silhouette or figures. Edge-to-edge clothing material. Square 1024 by 1024, crisp readable stylized details, neutral even diffuse illumination, no directional lighting or baked shadows, no perspective, no vignette, no text, no labels, no watermark. Match a muted earthy stylized survival game palette."
+    }
+  ]
+}

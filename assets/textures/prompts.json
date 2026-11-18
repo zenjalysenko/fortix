@@ -1,0 +1,65 @@
+{
+  "generator": "built-in image_gen",
+  "assets": [
+    {
+      "name": "ground",
+      "file": "ground.png",
+      "prompt": "Use case: stylized-concept. Asset type: seamless square game material base-color texture for a stylized Three.js island survival game. Subject: Forest ground: tightly packed small grass tufts, moss, tiny pebbles and soil. Muted sage green and warm grey, medium-light values. Orthographic flat material scan, fills the square edge-to-edge. Hand-painted clean game art with fine readable details, subdued contrast, uniform neutral diffuse illumination, no baked directional shadows, no ambient vignette, no perspective, no border, no labels, no text, no watermark. Perfectly repeatable horizontally and vertically, keep opposite edges consistent. Square 1024 by 1024."
+    },
+    {
+      "name": "sand",
+      "file": "sand.png",
+      "prompt": "Use case: stylized-concept. Asset type: seamless square game material base-color texture for a stylized Three.js island survival game. Subject: Coastal sand: fine pale beige grains, subtle wind ripples, very sparse tiny pebbles. Orthographic flat material scan, fills the square edge-to-edge. Hand-painted clean game art with fine readable details, subdued contrast, uniform neutral diffuse illumination, no baked directional shadows, no ambient vignette, no perspective, no border, no labels, no text, no watermark. Perfectly repeatable horizontally and vertically, keep opposite edges consistent. Square 1024 by 1024."
+    },
+    {
+      "name": "snow",
+      "file": "snow.png",
+      "prompt": "Use case: stylized-concept. Asset type: seamless square game material base-color texture for a stylized Three.js island survival game. Subject: Snow: fine soft ivory snow crystals with subtle shallow wind texture and very pale cool grey flecks. Orthographic flat material scan, fills the square edge-to-edge. Hand-painted clean game art with fine readable details, subdued contrast, uniform neutral diffuse illumination, no baked directional shadows, no ambient vignette, no perspective, no border, no labels, no text, no watermark. Perfectly repeatable horizontally and vertically, keep opposite edges consistent. Square 1024 by 1024."
+    },
+    {
+      "name": "wood",
+      "file": "wood.png",
+      "prompt": "Use case: stylized-concept. Asset type: seamless square game material base-color texture for a stylized Three.js island survival game. Subject: Weathered pine wood: close parallel vertical grain, small knots and gentle cracks. Light warm desaturated brown. Suitable for trunks, planks, beams and walls. Orthographic flat material scan, fills the square edge-to-edge. Hand-painted clean game art with fine readable details, subdued contrast, uniform neutral diffuse illumination, no baked directional shadows, no ambient vignette, no perspective, no border, no labels, no text, no watermark. Perfectly repeatable horizontally and vertically, keep opposite edges consistent. Square 1024 by 1024."
+    },
+    {
+      "name": "leaves",
+      "file": "leaves.png",
+      "prompt": "Use case: stylized-concept. Asset type: seamless square game material base-color texture for a stylized Three.js island survival game. Subject: Dense pine needles: small interwoven clusters of short needles filling the entire surface, moss and sage greens, no branches visible. Orthographic flat material scan, fills the square edge-to-edge. Hand-painted clean game art with fine readable details, subdued contrast, uniform neutral diffuse illumination, no baked directional shadows, no ambient vignette, no perspective, no border, no labels, no text, no watermark. Perfectly repeatable horizontally and vertically, keep opposite edges consistent. Square 1024 by 1024."
+    },
+    {
+      "name": "stone",
+      "file": "stone.png",
+      "prompt": "Use case: stylized-concept. Asset type: seamless square game material base-color texture for a stylized Three.js island survival game. Subject: Island rock: granular slate limestone with irregular restrained cracks and tiny mineral flecks. Light desaturated grey, subtle moss. Suitable for boulders, caves and ancient pillars. Orthographic flat material scan, fills the square edge-to-edge. Hand-painted clean game art with fine readable details, subdued contrast, uniform neutral diffuse illumination, no baked directional shadows, no ambient vignette, no perspective, no border, no labels, no text, no watermark. Perfectly repeatable horizontally and vertically, keep opposite edges consistent. Square 1024 by 1024."
+    },
+    {
+      "name": "cloth",
+      "file": "cloth.png",
+      "prompt": "Use case: stylized-concept. Asset type: seamless square game material base-color texture for a stylized Three.js island survival game. Subject: Woven fabric: close small-scale canvas weave with tiny thread irregularities, pale neutral warm grey. No seams, buttons or folds. For colored jackets and trousers. Orthographic flat material scan, fills the square edge-to-edge. Hand-painted clean game art with fine readable details, subdued contrast, uniform neutral diffuse illumination, no baked directional shadows, no ambient vignette, no perspective, no border, no labels, no text, no watermark. Perfectly repeatable horizontally and vertically, keep opposite edges consistent. Square 1024 by 1024."
+    },
+    {
+      "name": "skin",
+      "file": "skin.png",
+      "prompt": "Use case: stylized-concept. Asset type: seamless square game material base-color texture for a stylized Three.js island survival game. Subject: Stylized character skin: nearly uniform warm ivory, very subtle fine soft pores, no body parts, no hair, no prominent freckles. Neutral light value for tinting. Orthographic flat material scan, fills the square edge-to-edge. Hand-painted clean game art with fine readable details, subdued contrast, uniform neutral diffuse illumination, no baked directional shadows, no ambient vignette, no perspective, no border, no labels, no text, no watermark. Perfectly repeatable horizontally and vertically, keep opposite edges consistent. Square 1024 by 1024."
+    },
+    {
+      "name": "leather",
+      "file": "leather.png",
+      "prompt": "Use case: stylized-concept. Asset type: seamless square game material base-color texture for a stylized Three.js island survival game. Subject: Worn backpack leather: fine pebbled grain, sparse tiny scratches, desaturated light warm grey. No stitches, straps, text or hardware. Orthographic flat material scan, fills the square edge-to-edge. Hand-painted clean game art with fine readable details, subdued contrast, uniform neutral diffuse illumination, no baked directional shadows, no ambient vignette, no perspective, no border, no labels, no text, no watermark. Perfectly repeatable horizontally and vertically, keep opposite edges consistent. Square 1024 by 1024."
+    },
+    {
+      "name": "crystal",
+      "file": "crystal.png",
+      "prompt": "Use case: stylized-concept. Asset type: seamless square game material base-color texture for a stylized Three.js island survival game. Subject: Magic crystal surface: abstract tightly packed angular translucent mineral facets, very pale mint and silver with thin teal internal fractures. Flat surface, no individual gemstone silhouette. Orthographic flat material scan, fills the square edge-to-edge. Hand-painted clean game art with fine readable details, subdued contrast, uniform neutral diffuse illumination, no baked directional shadows, no ambient vignette, no perspective, no border, no labels, no text, no watermark. Perfectly repeatable horizontally and vertically, keep opposite edges consistent. Square 1024 by 1024."
+    },
+    {
+      "name": "water",
+      "file": "water.png",
+      "prompt": "Use case: stylized-concept. Asset type: seamless square game material base-color texture for a stylized Three.js island survival game. Subject: Ocean surface albedo: subtle stylized interlocking shallow ripples and thin scattered caustic lines, light grey aqua. No horizon, shoreline, objects or cast shadows. Orthographic flat material scan, fills the square edge-to-edge. Hand-painted clean game art with fine readable details, subdued contrast, uniform neutral diffuse illumination, no baked directional shadows, no ambient vignette, no perspective, no border, no labels, no text, no watermark. Perfectly repeatable horizontally and vertically, keep opposite edges consistent. Square 1024 by 1024."
+    },
+    {
+      "name": "flame",
+      "file": "flame.png",
+      "prompt": "Use case: stylized-concept. Asset type: seamless square game material base-color texture for a stylized Three.js island survival game. Subject: Fire energy surface: continuous organic wisps and flowing upward streaks, soft pale yellow and warm orange, entirely filled background. No individual flame silhouette and no black background. Orthographic flat material scan, fills the square edge-to-edge. Hand-painted clean game art with fine readable details, subdued contrast, uniform neutral diffuse illumination, no baked directional shadows, no ambient vignette, no perspective, no border, no labels, no text, no watermark. Perfectly repeatable horizontally and vertically, keep opposite edges consistent. Square 1024 by 1024."
+    }
+  ]
+}
