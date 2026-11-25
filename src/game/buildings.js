@@ -70,17 +70,17 @@ export function placement(type, player, yaw, structures, terrain) {
 }
 
 export function placementReason(b, state, player, terrain, obstacles) {
-  if (state.cave) return 'У печері будувати не можна';
-  if (!state[b.type]) return 'Спочатку виготовіть комплект у Q';
-  if (state.structures.length >= 500) return 'Досягнуто ліміту 500 споруд';
-  if (Math.hypot(b.x, b.z) > 138) return 'Занадто близько до води';
-  if (state.structures.some(o => o.type === b.type && Math.hypot(o.x - b.x, o.z - b.z) < .1 && (b.type !== 'wall' || Math.abs(Math.sin(o.yaw - b.yaw)) < .1))) return 'Місце вже зайняте';
-  if (['roof', 'bed', 'chest'].includes(b.type) && !state.structures.some(o => o.type === 'floor' && Math.abs(o.x - b.x) < .1 && Math.abs(o.z - b.z) < .1)) return 'Потрібна підлога під спорудою';
+  if (state.cave) return 'В пещере строить нельзя';
+  if (!state[b.type]) return 'Сначала изготовьте комплект в Q';
+  if (state.structures.length >= 500) return 'Достигнут лимит 500 построек';
+  if (Math.hypot(b.x, b.z) > 138) return 'Слишком близко к воде';
+  if (state.structures.some(o => o.type === b.type && Math.hypot(o.x - b.x, o.z - b.z) < .1 && (b.type !== 'wall' || Math.abs(Math.sin(o.yaw - b.yaw)) < .1))) return 'Место уже занято';
+  if (['roof', 'bed', 'chest'].includes(b.type) && !state.structures.some(o => o.type === 'floor' && Math.abs(o.x - b.x) < .1 && Math.abs(o.z - b.z) < .1)) return 'Нужен пол под постройкой';
   const footprint = buildingBoxes(b)[0] || { ...b, halfX: 1.95, halfZ: 1.95 };
-  if (insideBox(player.x, player.z, footprint, .7) && b.type !== 'roof') return 'Відійдіть від місця будівництва';
+  if (insideBox(player.x, player.z, footprint, .7) && b.type !== 'roof') return 'Отойдите от места строительства';
   const heights = [-1, 1].flatMap(x => [-1, 1].map(z => terrain(b.x + x * 1.8, b.z + z * 1.8)));
-  if (b.type === 'floor' && Math.max(...heights) - Math.min(...heights) > 1.5) return 'Занадто крутий схил';
-  if (b.type !== 'roof' && obstacles.some(o => overlaps(footprint, o))) return 'Перешкода на місці будівництва';
+  if (b.type === 'floor' && Math.max(...heights) - Math.min(...heights) > 1.5) return 'Слишком крутой склон';
+  if (b.type !== 'roof' && obstacles.some(o => overlaps(footprint, o))) return 'Препятствие на месте строительства';
   if (state.structures.some(o => {
     if (o.type === 'floor' || o.type === 'roof' || b.type === 'floor' || b.type === 'roof') return false;
     const frames = ['wall', 'door'];
@@ -88,6 +88,6 @@ export function placementReason(b, state, player, terrain, obstacles) {
     if (frames.includes(o.type) && frames.includes(b.type) && Math.abs(Math.abs(o.x-b.x)-2)<.05 && Math.abs(Math.abs(o.z-b.z)-2)<.05) return false;
     // An open door still reserves its closed footprint for future use.
     return buildingBoxes({...o,open:false}).some(box => overlaps(footprint, box));
-  })) return 'Споруди перетинаються';
+  })) return 'Постройки пересекаются';
   return '';
 }

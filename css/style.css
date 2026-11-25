@@ -1,15 +1,97 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
-:root{font-family:Manrope,system-ui,sans-serif;color:#f3f5ee;background:#101b24;font-synthesis:none}*{box-sizing:border-box}body{margin:0;overflow:hidden}canvas{display:block}#game{position:fixed;inset:0}.ui{position:fixed;inset:0;pointer-events:none}.top{position:absolute;left:28px;right:28px;top:24px;display:flex;justify-content:space-between;align-items:flex-start}.brand{font-size:12px;letter-spacing:.28em;font-weight:800;color:#d1edb5}.brand span{display:block;font-size:10px;letter-spacing:.12em;color:#fff9;margin-top:5px;font-weight:500}.pill{background:#101b24b8;border:1px solid #ffffff24;border-radius:9px;padding:10px 14px;backdrop-filter:blur(12px);font:11px 'DM Mono';letter-spacing:.1em}.stats{position:absolute;left:28px;bottom:26px;width:210px;display:grid;gap:8px}.stat{display:grid;grid-template-columns:54px 1fr;align-items:center;gap:10px;font:10px 'DM Mono';color:#e5e9df}.bar{height:5px;background:#ffffff2a;border-radius:9px;overflow:hidden}.bar i{height:100%;display:block;background:#d1edb5;transition:width .2s}.bar.hp i{background:#f08168}.bar.food i{background:#e4bb68}.bar.water i{background:#78c8d9}.hotbar{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);display:flex;gap:6px}.slot{width:49px;height:50px;border:1px solid #ffffff30;background:#101b24a8;border-radius:8px;display:grid;place-items:center;position:relative;font:15px 'DM Mono';backdrop-filter:blur(8px)}.slot.active{border-color:#d1edb5;box-shadow:0 0 0 1px #d1edb555}.slot small{position:absolute;top:3px;left:5px;font:9px 'DM Mono';color:#fff9}.slot b{position:absolute;bottom:3px;right:5px;font:9px 'DM Mono';color:#fff9}.hint{position:absolute;left:50%;top:55%;transform:translate(-50%,18px);font-size:12px;color:white;background:#101b24a8;padding:9px 13px;border-radius:7px;opacity:0;transition:.15s}.hint.show{opacity:1}.cross{position:absolute;left:50%;top:50%;width:14px;height:14px;transform:translate(-50%,-50%);opacity:.8}.cross:before,.cross:after{content:'';position:absolute;background:white;border-radius:2px}.cross:before{width:2px;height:12px;left:6px}.cross:after{width:12px;height:2px;top:5px}.toast{position:absolute;left:50%;top:19%;transform:translate(-50%,-10px);background:#101b24d9;padding:10px 16px;border:1px solid #ffffff22;border-radius:8px;font-size:12px;opacity:0;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}.panel{pointer-events:auto;position:absolute;inset:0;background:#081016b8;display:grid;place-items:center;backdrop-filter:blur(9px)}.card{width:min(520px,calc(100vw - 36px));padding:34px;background:#17242b;border:1px solid #ffffff20;border-radius:18px;box-shadow:0 24px 90px #0008}.eyebrow{font:10px 'DM Mono';letter-spacing:.22em;color:#c7e9a9}.card h1{font-size:42px;line-height:1;margin:12px 0}.card p{color:#c0c9c6;font-size:13px;line-height:1.7}.actions{display:flex;gap:10px;margin-top:22px}.btn{pointer-events:auto;border:0;border-radius:7px;padding:12px 17px;background:#d1edb5;color:#17242b;font:700 12px Manrope;cursor:pointer}.btn.alt{background:#ffffff12;color:white;border:1px solid #ffffff24}.menu-note{font:10px 'DM Mono';color:#fff8;margin-top:18px;line-height:1.8}.inventory{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0}.item{background:#ffffff09;border:1px solid #ffffff14;border-radius:8px;padding:12px;font:11px 'DM Mono';display:flex;justify-content:space-between}.recipes{display:flex;flex-wrap:wrap;gap:8px}.recipes .btn{font-size:10px;padding:10px}.objective{position:absolute;right:28px;top:91px;font-size:10px;color:#fff9;text-align:right;line-height:1.7}.toast, .panel{pointer-events:none}.card,.card *{pointer-events:auto}.hidden{display:none!important}.mobile{display:none}@media(max-width:650px){.top{left:16px;right:16px;top:15px}.stats{left:16px;bottom:18px;width:160px}.slot{width:39px;height:42px}.hotbar{bottom:16px}.objective{display:none}.brand span{font-size:8px}.mobile{display:block}}
-/* Survival systems */
-.eyebrow,.menu-note,.compass,.pill,.stat,.slot,.slot small,.slot b{font-family:'DM Mono',Consolas,monospace}
-.ui:has(.panel:not(.hidden)) .compass,.ui:has(.panel:not(.hidden)) .controls{visibility:hidden}
-.card{max-height:calc(100dvh - 40px);overflow-y:auto;scrollbar-color:#7e9875 #17242b;width:min(720px,calc(100vw - 36px))}
-.card h1{font-size:clamp(28px,4vw,42px);line-height:1.12}.actions{flex-wrap:wrap}.btn:disabled{opacity:.4;cursor:not-allowed}.btn:focus-visible,.slot:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #e2ffbf;outline-offset:3px}
-.recipes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.recipes .btn{text-align:left;line-height:1.45}.btn small{display:block;font-weight:400;font-size:10px;margin-top:5px}.inventory{grid-template-columns:repeat(3,minmax(0,1fr))}.item{gap:8px}.item span{overflow-wrap:anywhere}
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{font-family:Manrope,system-ui,sans-serif;color:#f3f5ee;background:#101b24;font-synthesis:none}
+*{box-sizing:border-box}
+body{margin:0;overflow:hidden}
+canvas{display:block}
+#game{position:fixed;inset:0}
+.ui{position:fixed;inset:0;pointer-events:none}
+.top{position:absolute;left:28px;right:28px;top:24px;display:flex;justify-content:space-between;align-items:flex-start}
+.brand{font-size:12px;letter-spacing:.28em;font-weight:800;color:#d1edb5}
+.brand span{display:block;font-size:10px;letter-spacing:.12em;color:#fff9;margin-top:5px;font-weight:500}
+.pill{background:#101b24b8;border:1px solid #ffffff24;border-radius:9px;padding:10px 14px;backdrop-filter:blur(12px);font:11px 'DM Mono';letter-spacing:.1em}
+
+/* Boss Health Bar HUD */
+.boss-hud{position:absolute;top:68px;left:50%;transform:translateX(-50%);width:min(440px,88vw);background:#101b24dd;border:1px solid #ff440088;border-radius:10px;padding:8px 14px;backdrop-filter:blur(10px);box-shadow:0 0 24px rgba(255,68,0,0.4);text-align:center;z-index:4;transition:opacity .3s}
+.boss-hud.hidden{display:none}
+.boss-name{font:800 11px 'DM Mono';letter-spacing:.18em;color:#ffaa55;text-transform:uppercase;margin-bottom:6px}
+.boss-bar-wrap{height:8px;background:rgba(255,255,255,0.12);border-radius:5px;overflow:hidden}
+.boss-bar-fill{height:100%;width:100%;background:linear-gradient(90deg,#ff2200,#ff9900);transition:width .15s ease-out}
+
+/* Realistic Survival Stats */
+.stats{position:absolute;left:28px;bottom:26px;width:215px;display:grid;gap:6px}
+.stat{display:grid;grid-template-columns:72px 1fr;align-items:center;gap:10px;font:10px 'DM Mono';color:#e5e9df}
+.bar{height:5px;background:#ffffff2a;border-radius:9px;overflow:hidden}
+.bar i{height:100%;display:block;background:#d1edb5;transition:width .2s}
+.bar.hp i{background:#f06868}
+.bar.food i{background:#e4bb68}
+.bar.water i{background:#68c8e4}
+.bar.temp i{background:#f39c12}
+.bar.stamina i{background:#2ecc71}
+
+.hotbar{position:absolute;left:50%;bottom:36px;transform:translateX(-50%);display:flex;gap:7px}
+.slot{pointer-events:auto;cursor:pointer;color:#f3f5ee;width:58px;height:56px;border:1px solid #ffffff30;background:#101b24a8;border-radius:8px;display:grid;place-items:center;position:relative;font:15px 'DM Mono';backdrop-filter:blur(8px)}
+.slot.active{border-color:#d1edb5;box-shadow:0 0 0 1px #d1edb555}
+.slot.equipped{background:#425d41d9}
+.slot span{font-size:23px}
+.slot small{position:absolute;top:3px;left:5px;font:9px 'DM Mono';color:#fff9}
+.slot b{position:absolute;bottom:3px;right:5px;font:9px 'DM Mono';color:#fff9}
+.slot em{position:absolute;top:62px;font:8px Manrope;white-space:nowrap;color:#eef5df}
+
+/* Modern Tactical Crosshair */
+.cross{position:absolute;left:50%;top:50%;width:26px;height:26px;transform:translate(-50%,-50%);pointer-events:none;transition:transform .08s ease,color .15s ease}
+.cross:before,.cross:after{display:none}
+.cross-dot{position:absolute;left:50%;top:50%;width:4px;height:4px;background:#fff;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 4px #000a}
+.cross-t,.cross-b,.cross-l,.cross-r{position:absolute;background:rgba(255,255,255,0.88);box-shadow:0 0 3px #000c;border-radius:1px;transition:background .15s}
+.cross-t{top:0;left:12px;width:2px;height:7px}
+.cross-b{bottom:0;left:12px;width:2px;height:7px}
+.cross-l{left:0;top:12px;width:7px;height:2px}
+.cross-r{right:0;top:12px;width:7px;height:2px}
+.cross.hit .cross-dot{background:#ff2a2a;box-shadow:0 0 8px #ff2a2a}
+.cross.hit .cross-t,.cross.hit .cross-b,.cross.hit .cross-l,.cross.hit .cross-r{background:#ff2a2a}
+.cross.fired{transform:translate(-50%,-50%) scale(1.4)}
+
+/* Freeze and Bleed Overlays */
+.freeze-overlay{position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle,transparent 55%,rgba(100,200,255,0.42) 100%);opacity:0;transition:opacity .5s ease;z-index:2}
+.bleed-overlay{position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle,transparent 60%,rgba(220,20,20,0.38) 100%);opacity:0;transition:opacity .4s ease;z-index:2}
+
+.hint{position:absolute;left:50%;bottom:118px;max-width:90vw;text-align:center;transform:translate(-50%,0);font-size:11px;color:white;background:#101b24a8;padding:9px 13px;border-radius:7px;opacity:0;transition:.15s}
+.hint.show{opacity:1}
+.toast{position:absolute;left:50%;top:105px;transform:translate(-50%,-10px);background:#101b24ea;padding:10px 18px;border:1px solid #ffffff28;border-radius:8px;font-size:12px;opacity:0;transition:.25s;max-width:75vw;text-align:center;z-index:5}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.panel{pointer-events:auto;position:absolute;inset:0;background:#081016b8;display:grid;place-items:center;backdrop-filter:blur(9px)}
+.card{width:min(720px,calc(100vw - 36px));max-height:calc(100dvh - 40px);overflow-y:auto;scrollbar-color:#7e9875 #17242b;padding:34px;background:#17242b;border:1px solid #ffffff20;border-radius:18px;box-shadow:0 24px 90px #0008}
+.eyebrow{font:10px 'DM Mono';letter-spacing:.22em;color:#c7e9a9}
+.card h1{font-size:clamp(28px,4vw,42px);line-height:1.12;margin:12px 0}
+.card p{color:#c0c9c6;font-size:13px;line-height:1.7}
+.actions{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.btn{pointer-events:auto;border:0;border-radius:7px;padding:12px 17px;background:#d1edb5;color:#17242b;font:700 12px Manrope;cursor:pointer}
+.btn.alt{background:#ffffff12;color:white;border:1px solid #ffffff24}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn small{display:block;font-weight:400;font-size:10px;margin-top:5px}
+.btn:focus-visible,.slot:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #e2ffbf;outline-offset:3px}
+.menu-note{font:10px 'DM Mono';color:#fff8;margin-top:18px;line-height:1.8}
+.inventory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:18px 0}
+.item{background:#ffffff09;border:1px solid #ffffff14;border-radius:8px;padding:12px;font:11px 'DM Mono';display:flex;justify-content:space-between;gap:8px}
+.item span{overflow-wrap:anywhere}
+.recipes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.recipes .btn{font-size:10px;padding:10px;text-align:left;line-height:1.45}
+.objective{position:absolute;top:83px;right:28px;max-width:270px;color:#eff6e7;background:#17242ba8;border-left:2px solid #d1edb5;border-radius:5px;padding:12px;text-align:left;font-size:12px;line-height:1.7}
 .compass{position:absolute;left:50%;top:28px;transform:translateX(-50%);color:#eaf0df;background:#15252bad;padding:8px 12px;border:1px solid #ffffff20;border-radius:8px;font:10px 'DM Mono';white-space:nowrap}
-.objective{top:83px;right:28px;max-width:270px;color:#eff6e7;background:#17242ba8;border-left:2px solid #d1edb5;border-radius:5px;padding:12px;text-align:left;font-size:12px}
-.hotbar{bottom:36px;gap:7px}.slot{pointer-events:auto;cursor:pointer;color:#f3f5ee;width:58px;height:56px}.slot span{font-size:23px}.slot em{position:absolute;top:62px;font:8px Manrope;white-space:nowrap;color:#eef5df}.slot.equipped{background:#425d41d9}.stats{bottom:38px;width:190px}.stat{grid-template-columns:65px 1fr}.controls{position:absolute;left:50%;bottom:9px;transform:translateX(-50%);font-size:9px;color:#e2e8d0;white-space:nowrap}.hint{top:auto;bottom:118px;max-width:90vw;text-align:center;transform:translate(-50%,0);font-size:11px}.toast{top:105px;max-width:70vw;text-align:center;z-index:3}
-.setting{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:22px 0;font-size:14px}.setting input{accent-color:#d1edb5;width:50%}.setting select{padding:8px;border:1px solid #ffffff33;background:#24373c;color:#fff;border-radius:5px}.island-map{display:block;width:min(100%,430px);max-height:48dvh;margin:0 auto;border-radius:12px;border:1px solid #ffffff22}.island-map text{font:8px Manrope;fill:#fff;paint-order:stroke;stroke:#17242b;stroke-width:2px;stroke-linejoin:round}
-.storage{display:grid;gap:6px;margin:20px 0}.storage-row{display:flex;align-items:center;gap:8px;background:#ffffff08;padding:8px;border-radius:6px}.storage-row span{flex:1;font-size:12px}.storage-row small{display:block;color:#b6c5bd;font-size:10px;margin-top:5px}.storage-row .btn{padding:8px 16px}
-@media(max-width:1100px){.stats{bottom:120px}.compass{top:65px}.objective{top:110px}.toast{top:180px}}
-@media(max-width:650px){.recipes,.inventory{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:22px}.hotbar{gap:3px;bottom:34px}.slot{width:39px;height:44px}.slot em{top:48px;font-size:6px}.slot span{font-size:19px}.controls{display:none}.objective{display:block;top:102px;right:16px;max-width:200px;font-size:10px}.compass{max-width:95vw;overflow:hidden;font-size:8px}.hint{bottom:103px}.stats{bottom:150px}.toast{top:175px}.actions .btn{flex:1}}
+.controls{position:absolute;left:50%;bottom:9px;transform:translateX(-50%);font-size:9px;color:#e2e8d0;white-space:nowrap}
+.toast, .panel{pointer-events:none}
+.card,.card *{pointer-events:auto}
+.hidden{display:none!important}
+.eyebrow,.menu-note,.compass,.pill,.stat,.slot,.slot small,.slot b{font-family:'DM Mono',Consolas,monospace}
+.ui:has(.panel:not(.hidden)) .compass,.ui:has(.panel:not(.hidden)) .controls,.ui:has(.panel:not(.hidden)) .cross{visibility:hidden}
+.setting{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:22px 0;font-size:14px}
+.setting input{accent-color:#d1edb5;width:50%}
+.setting select{padding:8px;border:1px solid #ffffff33;background:#24373c;color:#fff;border-radius:5px}
+.island-map{display:block;width:min(100%,430px);max-height:48dvh;margin:0 auto;border-radius:12px;border:1px solid #ffffff22}
+.island-map text{font:8px Manrope;fill:#fff;paint-order:stroke;stroke:#17242b;stroke-width:2px;stroke-linejoin:round}
+.storage{display:grid;gap:6px;margin:20px 0}
+.storage-row{display:flex;align-items:center;gap:8px;background:#ffffff08;padding:8px;border-radius:6px}
+.storage-row span{flex:1;font-size:12px}
+.storage-row small{display:block;color:#b6c5bd;font-size:10px;margin-top:5px}
+.storage-row .btn{padding:8px 16px}
+@media(max-width:1100px){.stats{bottom:120px}.compass{top:65px}.objective{top:110px}.toast{top:180px}.boss-hud{top:105px}}
+@media(max-width:650px){.recipes,.inventory{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:22px}.hotbar{gap:3px;bottom:34px}.slot{width:39px;height:44px}.slot em{top:48px;font-size:6px}.slot span{font-size:19px}.controls{display:none}.objective{display:block;top:102px;right:16px;max-width:200px;font-size:10px}.compass{max-width:95vw;overflow:hidden;font-size:8px}.hint{bottom:103px}.stats{bottom:150px;width:170px}.toast{top:175px}.actions .btn{flex:1}}

@@ -65,6 +65,16 @@ export function createResource(kind) {
     const steak = mesh(group, 'steak', new THREE.CylinderGeometry(.3, .32, .14, 12), 'skin', '#b75b57', [0, .1, 0]);
     steak.scale.x = 1.35;
     mesh(group, 'bone', new THREE.CylinderGeometry(.075, .075, .15, 9), 'stone', '#f4e4c9', [.1, .12, 0]);
+  } else if (kind === 'bullets') {
+    for (let i = -1; i <= 1; i++) {
+      mesh(group, 'bullet-casing', new THREE.CylinderGeometry(.03, .03, .18, 7), 'stone', '#d4af37', [i * .09, .1, 0], { metalness: .85, roughness: .25 });
+      mesh(group, 'bullet-tip', new THREE.ConeGeometry(.03, .08, 7), 'stone', '#8d5e32', [i * .09, .22, 0], { metalness: .7, roughness: .3 });
+    }
+  } else if (kind === 'pistol') {
+    mesh(group, 'loot-pistol-grip', bevelBox(.07, .22, .09, .02), 'wood', '#4a3728', [0, .1, -.05]);
+    mesh(group, 'loot-pistol-barrel', bevelBox(.06, .08, .32, .015), 'stone', '#2c3033', [0, .22, .07], { metalness: .85, roughness: .2 });
+  } else if (kind === 'heavyArmor') {
+    mesh(group, 'loot-heavy-plate', bevelBox(.45, .45, .15, .03), 'stone', '#3f454a', [0, .25, 0], { metalness: .85, roughness: .25 });
   } else throw new Error(`Unknown resource: ${kind}`);
   return batchByMaterial(group);
 }

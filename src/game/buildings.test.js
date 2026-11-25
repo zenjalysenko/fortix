@@ -27,7 +27,7 @@ test('placement snaps floors and edges, uses floor height and requires support',
   assert.equal(placementReason(roof,s,p,terrain,[]),'');
   const wall=placement('wall',p,0,s.structures,terrain);assert.equal(wall.z,-2);
   assert.equal(placementReason(wall,s,p,terrain,[]),'');
-  const missing=createState();missing.roof=1;assert.match(placementReason(roof,missing,p,terrain,[]),/підлога/);
+  const missing=createState();missing.roof=1;assert.match(placementReason(roof,missing,p,terrain,[]),/пол|под постройкой|підлога/);
 });
 
 test('placement rejects occupied cells, obstacles, steep ground, cave and missing kit', () => {
