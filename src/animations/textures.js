@@ -3,7 +3,7 @@ import * as THREE from 'three';
 export const surfaceNames = ['ground', 'sand', 'snow', 'wood', 'leaves', 'stone', 'cloth', 'skin', 'leather', 'crystal', 'water', 'flame'];
 export const characterSurfaceNames = ['hero-face', 'hero-jacket', 'hero-trousers', 'hero-backpack', 'enemy-mask', 'enemy-robes'];
 
-// The small canvas is a fallback while project-local PNGs load.
+// The small canvas is a fallback while project-local WebP textures load.
 export function createSurfaceTextures() {
   const palette = {
     ground: ['#d6d7be', '#b8be9f'], wood: ['#d8b68e', '#947254'],
@@ -42,8 +42,8 @@ export function createSurfaceTextures() {
     texture.name = name;
     textures[name] = texture;
     const url = characterSurfaceNames.includes(name)
-      ? new URL(`../../assets/textures/characters/${name}.png`, import.meta.url).href
-      : new URL(`../../assets/textures/${name}.png`, import.meta.url).href;
+      ? new URL(`../../assets/textures/runtime/characters/${name}.webp`, import.meta.url).href
+      : new URL(`../../assets/textures/runtime/${name}.webp`, import.meta.url).href;
     new THREE.ImageLoader().load(url, image => {
       texture.image = image;
       texture.needsUpdate = true;

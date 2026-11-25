@@ -163,7 +163,19 @@ test('hero and enemy use separate face and clothing textures on animated heads',
   }
 });
 
-test('character PNGs load from their folder and face decals never repeat', () => {
+test('browser texture catalogue is WebP and stays below 2 MB', () => {
+  let bytes=0;
+  for(const name of [...surfaceNames,...characterSurfaceNames]) {
+    const folder=characterSurfaceNames.includes(name)?'characters/':'';
+    const data=readFileSync(new URL(`../../assets/textures/runtime/${folder}${name}.webp`,import.meta.url));
+    assert.equal(data.subarray(0,4).toString(),'RIFF',name);
+    assert.equal(data.subarray(8,12).toString(),'WEBP',name);
+    assert.equal(data.readUInt32LE(4)+8,data.length,name);bytes+=data.length;
+  }
+  assert.ok(bytes<2_000_000,`${bytes} browser texture bytes`);
+});
+
+test('runtime WebP textures load from their folder and face decals never repeat', () => {
   const previousDocument = globalThis.document, originalLoad = THREE.ImageLoader.prototype.load;
   const urls = [];
   try {
@@ -177,7 +189,7 @@ test('character PNGs load from their folder and face decals never repeat', () =>
     const textures = createSurfaceTextures();
     assert.equal(urls.length, surfaceNames.length + characterSurfaceNames.length);
     for (const name of characterSurfaceNames) {
-      assert.ok(urls.some(url => url.endsWith(`/characters/${name}.png`)), name);
+      assert.ok(urls.some(url => url.endsWith(`/runtime/characters/${name}.webp`)), name);
       assert.equal(textures[name].image.width, 1024);
     }
     for (const name of ['hero-face', 'enemy-mask']) {

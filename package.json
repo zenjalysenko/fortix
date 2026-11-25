@@ -1,1 +1,18 @@
-{"name":"fortinex","version":"1.0.0","type":"module","scripts":{"dev":"vite --host 0.0.0.0","build":"vite build","preview":"vite preview","test":"node --test src/animations/animations.test.js src/models/models.test.js","models:export":"node scripts/export-models.mjs"},"dependencies":{"three":"^0.170.0"},"devDependencies":{"vite":"^6.0.0"}}
+{
+  "name": "fortinex",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test src/animations/animations.test.js src/models/models.test.js src/game/rules.test.js src/game/buildings.test.js",
+    "models:export": "node scripts/export-models.mjs"
+  },
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}

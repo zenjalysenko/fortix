@@ -31,6 +31,17 @@ export function createIsland() {
 
 export function createOcean() {
   const material = new THREE.MeshPhysicalMaterial({ color: '#6fc3d0', roughness: .22, metalness: .12, transparent: true, opacity: .88, clearcoat: .5 }); material.userData.surface = 'water';
+  const waveTime = { value: 0 };
+  material.userData.waveTime = waveTime;
+  material.onBeforeCompile = shader => {
+    shader.uniforms.waveTime = waveTime;
+    shader.vertexShader = 'uniform float waveTime;\n' + shader.vertexShader;
+    shader.vertexShader = shader.vertexShader.replace('#include <begin_vertex>', `#include <begin_vertex>
+      transformed.z += sin(position.x * 0.028 + waveTime * 0.7) * 0.16 + cos(position.y * 0.035 + waveTime * 0.55) * 0.13;`);
+    // Analytic derivatives replace the per-frame CPU normal and geometry uploads.
+    shader.vertexShader = shader.vertexShader.replace('#include <beginnormal_vertex>', `#include <beginnormal_vertex>
+      objectNormal = normalize(vec3(-0.00448 * cos(position.x * 0.028 + waveTime * 0.7), 0.00455 * sin(position.y * 0.035 + waveTime * 0.55), 1.0));`);
+  };
   const ocean = new THREE.Mesh(new THREE.PlaneGeometry(1800, 1800, 100, 100), material);
   ocean.name = 'ocean'; ocean.rotation.x = -Math.PI / 2; ocean.position.y = .05;
   return ocean;

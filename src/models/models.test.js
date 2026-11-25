@@ -3,7 +3,19 @@ import test from 'node:test';
 import { readFileSync, existsSync } from 'node:fs';
 import * as THREE from 'three';
 import { modelCatalog } from './catalog.js';
-import { createCharacter, characterParts, createShelter, createRuins, createWall, createPineGeometries, createRockGeometry, terrain, createIsland } from './index.js';
+import { createCharacter, characterParts, createShelter, createRuins, createWall, createPineGeometries, createRockGeometry, terrain, createIsland, createOcean } from './index.js';
+
+test('ocean waves update one GPU uniform without changing CPU geometry', () => {
+  const ocean=createOcean(),positions=ocean.geometry.attributes.position,normals=ocean.geometry.attributes.normal;
+  const version=positions.version,normalVersion=normals.version;
+  const shader={uniforms:{},vertexShader:THREE.ShaderLib.physical.vertexShader};
+  ocean.material.onBeforeCompile(shader);
+  ocean.material.userData.waveTime.value=12;
+  assert.equal(shader.uniforms.waveTime.value,12);
+  assert.ok(shader.vertexShader.includes('transformed.z += sin'));
+  assert.ok(shader.vertexShader.includes('objectNormal = normalize(vec3'));
+  assert.equal(positions.version,version);assert.equal(normals.version,normalVersion);
+});
 
 test('every model has finite geometry, normals, UVs and nonzero bounds', () => {
   for (const [name, create] of Object.entries(modelCatalog)) {
